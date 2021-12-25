@@ -68,7 +68,7 @@ body {
 
 		</div>
 
-		<form action="AssessOrderServlet" style="margin-top: 5px;text-align:center;width:100%">
+		<form action="CommentOrderServlet" style="margin-top: 5px;text-align:center;width:100%">
 				<input type="hidden" name="oid" value="${order.oid}"/>
 				
 				<div>

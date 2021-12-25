@@ -15,7 +15,7 @@ class ProductInfoServlet: HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
         // 获取商品编号
-        val pid = req.getParameter("pid").toInt()
+        val pid = req.getParameter("pid")
         // 获取商品信息并设置到 request 作用域中，然后转发到商品详情页面
         ProductService.getProductById(pid)?.let {
             req.setAttribute("product", it)

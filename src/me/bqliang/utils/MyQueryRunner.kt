@@ -2,4 +2,4 @@ package me.bqliang.utils
 
 import org.apache.commons.dbutils.QueryRunner
 
-val myQR by lazy { QueryRunner(C3P0Utils.getDataSource()) }
+val myQR by lazy { QueryRunner(myDataSource) }

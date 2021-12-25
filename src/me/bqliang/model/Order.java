@@ -1,5 +1,6 @@
 package me.bqliang.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +9,7 @@ public class Order {
 	//订单编号
 	private String oid;
 	//订单时间
-	private Date orderTime;
+	private LocalDateTime orderTime;
 	//收货人姓名
 	private String name;
 	//收货地址
@@ -18,7 +19,7 @@ public class Order {
 	//订单总价格
 	private double total;
 	//订单状态
-	private int state=0;
+	private int state = 0;
 	//用户id
 	private String uid;
 	//订单评价
@@ -32,10 +33,10 @@ public class Order {
 	public void setOid(String oid) {
 		this.oid = oid;
 	}
-	public Date getOrderTime() {
+	public LocalDateTime getOrderTime() {
 		return orderTime;
 	}
-	public void setOrderTime(Date orderTime) {
+	public void setOrderTime(LocalDateTime orderTime) {
 		this.orderTime = orderTime;
 	}
 	public String getName() {

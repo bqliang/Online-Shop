@@ -21,7 +21,7 @@ class AddCartServlet: HttpServlet() {
 
         val session = req.session
         // 构建购物车 item
-        val cartItem = ProductService.createCartItem(pid.toInt(), num)
+        val cartItem = ProductService.createCartItem(pid, num)
         // 从会话中获取购物车
         var cart: Cart? = session.getAttribute("cart") as Cart?
         // 如果购物车为空，则构建新的购物车对象

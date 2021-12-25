@@ -3,6 +3,7 @@ package me.bqliang.service
 import me.bqliang.model.Cart
 import me.bqliang.model.Order
 import me.bqliang.model.User
+import java.time.LocalDateTime
 import java.util.*
 
 object OrderService {
@@ -18,7 +19,7 @@ object OrderService {
         oid = UUID.randomUUID().toString()
         address = user.address
         name = user.name
-        orderTime = Date()
+        orderTime = LocalDateTime.now()
         state = 0
         telephone = user.telephone
         uid = user.uid

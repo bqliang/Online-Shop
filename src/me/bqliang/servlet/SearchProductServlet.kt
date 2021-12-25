@@ -30,7 +30,9 @@ class SearchProductServlet: HttpServlet() {
 
         // 根据当前页数去筛选搜索结果
         val products =
-            searchResult.filterIndexed { index, _ -> (index < currentPage * SIZE) && (index < searchResult.size) }
+            searchResult.filterIndexed { index, _ ->
+                (index >= (currentPage - 1) * SIZE ) && (index < currentPage * SIZE) && (index < searchResult.size)
+            }
 
         // 设置数据并转发到 search.jsp
         req.apply {

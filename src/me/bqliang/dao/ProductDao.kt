@@ -37,7 +37,7 @@ object ProductDao {
      * @param pid 商品编号
      * @return 商品
      */
-    fun findProductById(pid: Int): Product? = myQR.query(
+    fun findProductById(pid: String): Product? = myQR.query(
         "select * from product where pid = ?",
         BeanHandler(Product::class.java),
         pid

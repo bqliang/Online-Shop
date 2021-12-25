@@ -30,7 +30,7 @@ object ProductService {
      * @param pid 商品编号
      * @return 商品
      */
-    fun getProductById(pid: Int) : Product?{
+    fun getProductById(pid: String) : Product?{
         return try {
             ProductDao.findProductById(pid)
         }catch (e: Exception){
@@ -47,7 +47,7 @@ object ProductService {
      * @param num 商品数量
      * @return 新的购物车项目
      */
-    fun createCartItem(pid: Int, num: Int) = CartItem().apply {
+    fun createCartItem(pid: String, num: Int) = CartItem().apply {
             product = getProductById(pid)
             buyNum = num
         }

@@ -59,5 +59,26 @@ object UserDao {
         username
     )
 
+
+    /**
+     * 更新用户信息
+     *
+     * @param user 用户
+     * @return 影响行数
+     */
+    fun updateUserInfo(user: User) = myQR.update(
+        "UPDATE user " +
+                "SET password = ?, name = ?, email = ?, telephone = ?, sex = ?, birthday = ?, address = ? " +
+                "WHERE username = ?",
+        user.password,
+        user.name,
+        user.email,
+        user.telephone,
+        user.sex,
+        user.birthday,
+        user.address,
+        user.username
+    )
+
 }
 

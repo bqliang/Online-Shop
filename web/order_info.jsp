@@ -67,7 +67,7 @@ body {
 
 		<div>
 			<hr />
-			<form class="form-horizontal" action="QueDingOrderServlet"
+			<form class="form-horizontal" action="ConfirmOrderServlet"
 				style="margin-top: 5px; margin-left: 250px;">
 				<input type="hidden" name="oid" value="${order.oid}">
 				<div class="form-group">
@@ -92,7 +92,8 @@ body {
 					</div>
 				</div>
 				<input type="submit" value="确定订单" style="margin-left:150px">
-			    &nbsp;&nbsp;&nbsp;<a href="DeleteOrderServlet?oid=${order.oid}">删除订单</a>
+				<%--  因为还没确定订单，所以这里不需要删除订单按钮  --%>
+				<%--  &nbsp;&nbsp;&nbsp;<a href="DeleteOrderServlet?oid=${order.oid}">删除订单</a>  --%>
 			    
 			    &nbsp;&nbsp;&nbsp;<input class="button_ok" type="button" onclick="history.go(-1)" value="返回"/>
 						

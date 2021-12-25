@@ -71,7 +71,11 @@ body {
 						      <c:if test="${order.state==2}">确定收货</c:if>
 						      <c:if test="${order.state==3}">去评价</c:if>
 						      <c:if test="${order.state==4}">查看订单详情</c:if>
-						    </a></td>
+						    </a>
+							<a href="ManageOrderServlet?state=-1&oid=${order.oid}">
+								<c:if test="${order.state==0}">&nbsp;&nbsp;删除订单</c:if>
+							</a>
+						  </td>
 						  <td><c:if test="${order.state==4}">交易成功</c:if></td>
 						</tr>
 					</tbody>
