@@ -13,7 +13,6 @@
 
 	<body>
 		<div class="container-fluid">
-
 			<!-- 引入header.jsp -->
 			<jsp:include page="/header.jsp"></jsp:include>
 
@@ -66,18 +65,15 @@
 					<h2>热门商品&nbsp;&nbsp;<img src="img/title2.jpg"/></h2>
 				</div>
 				<div class="col-md-12">
-					
-
-				<c:forEach items="${hotProductList}" var="hotProduct">
-					<div class="col-md-2" style="text-align:center;height:210px;padding:10px 0px;">
-						<a href="ProductInfoServlet?pid=${hotProduct.pid}">
-							<img src="${hotProduct.pimage }" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p style="height:26px;"><a href="ProductInfoServlet?pid=${hotProduct.pid}" style='color:#666'>${hotProduct.pname}</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;${hotProduct.shop_price}</font></p>
-					</div>
-	           </c:forEach>
-					
+					<c:forEach items="${hotProductList}" var="hotProduct">
+						<div class="col-md-2" style="text-align:center;height:210px;padding:10px 0px;">
+							<a href="ProductInfoServlet?pid=${hotProduct.pid}">
+								<img src="${hotProduct.pimage }" width="130" height="130" style="display: inline-block;">
+							</a>
+							<p style="height:26px;"><a href="ProductInfoServlet?pid=${hotProduct.pid}" style='color:#666'>${hotProduct.pname}</a></p>
+							<p><font color="#E4393C" style="font-size:16px">&yen;${hotProduct.shop_price}</font></p>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 			
@@ -93,24 +89,20 @@
 				</div>
 				
 				<div class="col-md-12">
-					
-				<c:forEach items="${newProductList}" var="newProduct">
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="ProductInfoServlet?pid=${newProduct.pid}">
-							<img src="${newProduct.pimage}" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p style="height:26px;"><a href="ProductInfoServlet?pid=${newProduct.pid}" style='color:#666'>${newProduct.pname}</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;${newProduct.shop_price}</font></p>
-					</div>
-	            </c:forEach>
-					
+					<c:forEach items="${newProductList}" var="newProduct">
+						<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
+							<a href="ProductInfoServlet?pid=${newProduct.pid}">
+								<img src="${newProduct.pimage}" width="130" height="130" style="display: inline-block;">
+							</a>
+							<p style="height:26px;"><a href="ProductInfoServlet?pid=${newProduct.pid}" style='color:#666'>${newProduct.pname}</a></p>
+							<p><font color="#E4393C" style="font-size:16px">&yen;${newProduct.shop_price}</font></p>
+						</div>
+					</c:forEach>
 				</div>
 			</div>			
 			
 			<!-- 引入footer.jsp -->
 			<jsp:include page="/footer.jsp"></jsp:include>
-			
 		</div>
 	</body>
-
 </html>

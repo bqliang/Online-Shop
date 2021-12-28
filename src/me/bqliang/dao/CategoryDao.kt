@@ -13,6 +13,6 @@ object CategoryDao {
      * 获取商品分类信息
      *
      */
-    fun getCategories() = myQR.query("SELECT * FROM category", BeanListHandler(Category::class.java))
+    fun getCategories(): List<Category> = myQR.query("SELECT * FROM category", BeanListHandler(Category::class.java))
 
 }

@@ -4,8 +4,7 @@ import jakarta.servlet.annotation.WebServlet
 import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import jakarta.servlet.http.HttpSession
-import me.bqliang.service.UserService.login
+import me.bqliang.dao.UserDao
 
 /**
  * 处理用户登录
@@ -18,8 +17,8 @@ class LoginServlet: HttpServlet() {
         // 获取用户提交的用户名和密码
         val username: String = req.getParameter("username")
         val password: String = req.getParameter("password")
-        // 调用 UserService 中的 login()
-        val user = login(username, password)
+        // 在数据库中查找用户
+        val user = UserDao.findUserByUsernameAndPassword(username, password)
 
         // 判断用户是否为空
         if (user != null) {

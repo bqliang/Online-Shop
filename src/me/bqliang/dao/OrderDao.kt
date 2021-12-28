@@ -1,7 +1,6 @@
 package me.bqliang.dao
 
 import me.bqliang.model.Order
-import me.bqliang.model.OrderItem
 import me.bqliang.utils.myQR
 import org.apache.commons.dbutils.handlers.BeanHandler
 import org.apache.commons.dbutils.handlers.BeanListHandler

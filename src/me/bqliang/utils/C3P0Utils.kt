@@ -8,5 +8,7 @@ val myDataSource: ComboPooledDataSource by lazy {
         jdbcUrl = "jdbc:mysql://localhost:3306/shopdb?characterEncoding=utf-8"
         user = "root"
         password = "mysql"
+        // 初始化连接池的连接对象个数
+        initialPoolSize = 10
     }
 }

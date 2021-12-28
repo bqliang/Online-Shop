@@ -22,6 +22,7 @@
 			</c:if>
 			<li><a href="cart.jsp">购物车</a></li>
 			<li><a href="OrderListServlet?currentPage=1">我的订单</a></li>
+			<li><a href="https://github.com/bqliang/Online-Shop">Github</a></li>
 		</ol>
 	</div>
 </div>

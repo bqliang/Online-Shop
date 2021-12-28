@@ -2,7 +2,6 @@ package me.bqliang.dao
 
 import me.bqliang.model.User
 import me.bqliang.utils.myQR
-import org.apache.commons.dbutils.ResultSetHandler
 import org.apache.commons.dbutils.handlers.BeanHandler
 
 /**
