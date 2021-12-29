@@ -5,9 +5,7 @@ import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import me.bqliang.dao.CategoryDao
-import me.bqliang.model.Category
-import me.bqliang.model.Product
-import me.bqliang.service.ProductService
+import me.bqliang.dao.ProductDao
 
 /**
  * 处理首页商品数据
@@ -16,22 +14,16 @@ import me.bqliang.service.ProductService
 @WebServlet(name = "IndexServlet", value = ["/IndexServlet"])
 class IndexServlet : HttpServlet() {
 
-    private lateinit var hotProducts : List<Product>
-    private lateinit var newProducts : List<Product>
-    private lateinit var categories : List<Category>
-
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse?) {
+        // 从数据库中获取数据
+        val hotProducts = ProductDao.getHotProducts()
+        val newProducts = ProductDao.getNewProducts()
+        val categories = CategoryDao.getCategories()
 
-        // 获取热门和最新商品
-        ProductService.getNewAndHotProducts()?.apply {
-            hotProducts = get("hot_products")!!
-            newProducts = get("new_products")!!
-        }
-
-        // 获取分类信息并设置到 session
-        categories = CategoryDao.getCategories()
-
-        // 设置数据到，然后将数据转发到首页
+        /**
+         * 设置数据，然后将数据转发到首页
+         * 因为分类导航栏在别的页面存在，所以将分类信息设置到 session 作用域
+         */
         req.apply {
             session.setAttribute("categoryList", categories)
             setAttribute("hotProductList", hotProducts)

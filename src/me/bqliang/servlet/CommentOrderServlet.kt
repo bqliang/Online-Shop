@@ -18,11 +18,9 @@ class CommentOrderServlet: HttpServlet() {
         req.characterEncoding = "UTF-8"
         val oid = req.getParameter("oid")
         val assess = req.getParameter("assess")
-        // 更新数据库添加评论
+        // 更新数据库给订单添加评论
         OrderDao.addComment(oid, assess)
-        // 更新订单状态
-        OrderDao.updateOrderState(oid, 4)
-        // 通过 ManageOrderServlet 跳转到订单详情页面
+        // 返回“我的订单”页面
         resp.sendRedirect("OrderListServlet?currentPage=1")
     }
 }

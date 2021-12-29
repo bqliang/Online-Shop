@@ -14,11 +14,15 @@ import me.bqliang.model.Cart
 class UpdateBuyNumServlet : HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
+        // 获取用户提交的信息
         val pid = req.getParameter("pid")
         val buyNum = req.getParameter("buyNum").toInt()
+        // 获取购物车对象
         val cart = req.session.getAttribute("cart") as Cart
+        // 修改购物车 item
         val cartItem = cart.cartItems
         cartItem[pid]?.buyNum = buyNum
+        // 重定向到购物车页面
         resp.sendRedirect("cart.jsp")
     }
 }

@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import me.bqliang.model.Cart
-import me.bqliang.service.ProductService
+import me.bqliang.service.CartService
 
 /**
  * 负责处理添加商品到购物车
@@ -21,7 +21,7 @@ class AddCartServlet: HttpServlet() {
 
         val session = req.session
         // 构建购物车 item
-        val cartItem = ProductService.createCartItem(pid, num)
+        val cartItem = CartService.createCartItem(pid, num)
         // 从会话中获取购物车
         var cart: Cart? = session.getAttribute("cart") as Cart?
         // 如果购物车为空，则构建新的购物车对象

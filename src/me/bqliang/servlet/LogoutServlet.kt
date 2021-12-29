@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse
 class LogoutServlet: HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
+        // 清空 session 作用域中的 user 对象，然后重定向到登录页面
         req.session.removeAttribute("user")
         resp.sendRedirect("login.jsp")
     }

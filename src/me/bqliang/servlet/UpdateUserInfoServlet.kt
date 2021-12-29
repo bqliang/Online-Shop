@@ -27,7 +27,6 @@ class UpdateUserInfoServlet : HttpServlet() {
             birthday = req.getParameter("birthday")
             address = req.getParameter("address")
         }.let(UserDao::updateUserInfo)
-        println("fuck")
 
         // 重新设置user并重定向到用户资料页面
         req.session.setAttribute("user", user)

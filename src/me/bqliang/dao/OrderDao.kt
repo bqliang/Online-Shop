@@ -80,15 +80,15 @@ object OrderDao {
 
 
     /**
-     * 更新订单评价
+     * 给订单添加评论
      *
      * @param oid 订单编号
      * @param comment 评论
-     * @return 影响行数
      */
-    fun addComment(oid: String, comment: String) = myQR.update(
-        "UPDATE orders SET assess = ? WHERE oid = ?",
-        comment,
-        oid
-    )
+    fun addComment(oid: String, comment: String) {
+        // 添加评论
+        myQR.update("UPDATE orders SET assess = ? WHERE oid = ?", comment, oid)
+        // 更新订单状态
+        updateOrderState(oid, 4)
+    }
 }

@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse
 class CleanCartServlet:HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
+        // 清空 session 作用域中的购物车对象，然后刷新购物车页面
         req.session.removeAttribute("cart")
         resp.sendRedirect("cart.jsp")
     }
